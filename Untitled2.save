@@ -1,0 +1,106 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <io.h>
+#include <ctype.h>
+#include <assert.h>
+
+typedef struct Card {
+    char rank;    // достоинство
+    char suit;    // масть
+};
+
+enum enum_cards
+    {
+    
+    }
+
+int main()
+    {
+        int kolvo = 0 ;
+        scanf ("%i\n", &kolvo);
+        
+        char karta[2] = '0';
+        Card* cards = (Card*) calloc (kolvo, sizeof (Card));
+        
+        for (int i = 1; i <= kolvo;)
+            {
+                getc (karta[0]);
+                getc (karta[1]);
+                
+                cards[i].rank = karta[0];
+                cards[i].suit = karta[1];
+                
+                i++;
+            }
+            
+            
+    }
+        
+        
+int comparator (const void *string1, const void *string2)
+    {
+        Card* card1 = (Card*) string1;
+        Card* card2 = (Card*) string2;
+        int rank1, rank2, suit1, suit2 = 0;
+        
+        switch (card1->rank)
+            {
+                case '2' :  rank1 = 1;
+                case '3' :  rank1 = 2;
+                case '4' :  rank1 = 3;
+                case '5' :  rank1 = 4;
+                case '6' :  rank1 = 5;
+                case '7' :  rank1 = 6;
+                case '8' :  rank1 = 7;
+                case '9' :  rank1 = 8;
+                case 'T' :  rank1 = 9;
+                case 'J' :  rank1 = 10;
+                case 'Q' :  rank1 = 11;
+                case 'K' :  rank1 = 12;
+                case 'A' :  rank1 = 13;
+            }
+            
+        switch (card2->rank)
+            {
+                case '2' :  rank2 = 1;
+                case '3' :  rank2 = 2;
+                case '4' :  rank2 = 3;
+                case '5' :  rank2 = 4;
+                case '6' :  rank2 = 5;
+                case '7' :  rank2 = 6;
+                case '8' :  rank2 = 7;
+                case '9' :  rank2 = 8;
+                case 'T' :  rank2 = 9;
+                case 'J' :  rank2 = 10;
+                case 'Q' :  rank2 = 11;
+                case 'K' :  rank2 = 12;
+                case 'A' :  rank2 = 13;
+            }
+        
+        switch (card1->suit)
+            {
+                case 'c' :  suit1 = 1;
+                case 's' :  suit1 = 2;
+                case 'h' :  suit1 = 3;
+                case 'd' :  suit1 = 4;
+               
+            }
+        
+        switch (card2->suit)
+            {
+                case 'c' :  suit2 = 1;
+                case 's' :  suit2 = 2;
+                case 'h' :  suit2 = 3;
+                case 'd' :  suit2 = 4;
+               
+            }
+            
+        if (
+        
+        
+        
+                
+                
+                
+        

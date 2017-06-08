@@ -1,0 +1,13 @@
+digraph {  
+       Student -> Diskran [label="n"]
+Student -> Plays_hockey [label="y"]
+Diskran -> Znamenskaya [label="n"]
+Diskran -> Jitluxin [label="y"]
+Plays_hockey -> From_fupm [label="n"]
+Plays_hockey -> Dima [label="y"]
+From_fupm -> Vreros_1_shtuka [label="n"]
+From_fupm -> Artem [label="y"]
+Vreros_1_shtuka -> Roma [label="n"]
+Vreros_1_shtuka -> Sasha [label="y"]
+
+ }

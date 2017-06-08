@@ -1,0 +1,1 @@
+( Student ( Diskran ( Znamenskaya nil nil ) ( Jitluxin nil nil ) ) ( Plays_hockey ( From_fupm ( Vreros_1_shtuka ( Roma nil nil ) ( Sasha nil nil ) ) ( Artem nil nil ) ) ( Dima nil nil ) ) ) 

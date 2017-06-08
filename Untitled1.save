@@ -1,0 +1,143 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <io.h>
+#include <ctype.h>
+#include <assert.h>
+
+#define TRASH 0xFEFEFEFE
+#define CANARY 0xBADF00D
+#define MAX_STR_LEN 100
+#define HASH_TABLE_SIZE 10
+#define TRASH_WORD BLABLABLA
+
+typedef struct List_elem
+    {
+        double can1;
+        char* word;
+        List_elem* prev;
+        List_elem* right;
+        Lis_elem* left;
+
+        double can2;
+    };
+
+
+
+typedef struct List_header
+    {
+        double can1;
+        int elem_amount;
+        ListElem* head;
+        double can2;
+    };
+
+
+void List_elem_ctor (List_elem* This, char* word);
+
+void List_elem_dtor (List_elem* This);
+
+Insert_right (List_elem* Where, List_elem* What);
+
+Insert_left (List_elem* Where, List_elem* What);
+
+bool List_OK (const ListElem* This);
+
+void Tree_save (List_header* This);
+
+
+FILE* save = fopen("tree_save.txt", "w");
+int main()
+    {
+
+
+    }
+
+
+
+void List_elem_ctor ( List_elem* This, char* word)
+    {
+        This->can1 = CANARY;
+
+        This->info = word;
+        This->prev = NULL;
+        This->right = NULL;
+        This-        FILE* save = fopen("tree_save.txt", "r");>left = NULL;
+
+        This->can2 = CANARY;
+    }
+
+
+void List_elem_dtor (List_elem_dtor* This)
+    {
+        This->can1 = TRASH;
+
+        This->word = TRASH_WORD;
+        This->prev = NULL;
+        This->right = NULL;
+        This->left = NULL;
+
+        This->can2 = TRASH;
+    }
+
+
+void Insert_right (List_elem* Where, List_elem* What)
+    {
+        Where->right = What;
+        What->prev = Where;
+    }
+
+
+void Insert_left (List_elem* Where, List_elem* What)
+    {
+        Where->left = What;
+        What->prev = Where;
+    }
+
+//проходит по всему дереву при этом обходя каждый элемент (Стартует заданную функцию в каждой ячейке)
+//Префиксный обход
+void Tree_view_prefix (List_header* Head, void (*Function) (List_elem*) )
+    {
+
+        List_elem* pointer = List_header->head;
+        List_prefix_save (pointer, Function);
+
+    }
+
+
+void List_prefix_save ( List_elem* This, void (*Function) (List_elem*) )
+    {
+        if (This == NULL) { fwrite(save,"nil"); return ;}
+
+        Function(This);
+
+        List_prefix (This->left, Function);
+        List_prefix (This->right, Function);
+
+        fwrite (save, ")");
+
+    }
+
+void List_elem_save (List_elem* This)
+    {
+        fwrite (save, "(%s", char* This->word );
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
